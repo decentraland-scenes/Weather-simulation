@@ -1,0 +1,19 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    ".vscode": true,
+    "tsconfig.json": true,
+    "package.json": true,
+    "package-lock.json": true,
+    ".dclignore": true,
+    ".gitignore": true,
+    "now.json": true,
+    "Dockerfile": true
+  }
+}

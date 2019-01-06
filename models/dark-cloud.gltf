@@ -1,0 +1,247 @@
+{
+    "accessors": [
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 558,
+            "max": [
+                465
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_lightning_bolt.001_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 466,
+            "max": [
+                1.1159340143203735,
+                0.6031420230865479,
+                1.4072569608688354
+            ],
+            "min": [
+                -1.1590780019760132,
+                -0.6520270109176636,
+                0.5572220087051392
+            ],
+            "name": "accessor_buffer_lightning_bolt.001_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 466,
+            "max": [
+                0.9340481162071228,
+                0.9988938570022583,
+                0.9982308745384216
+            ],
+            "min": [
+                -0.9394219517707825,
+                -0.9867150187492371,
+                -1.0
+            ],
+            "name": "accessor_buffer_lightning_bolt.001_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 466,
+            "max": [
+                0.9348999857902527,
+                0.9809000007808208
+            ],
+            "min": [
+                0.019099999219179153,
+                0.0350000262260437
+            ],
+            "name": "accessor_buffer_lightning_bolt.001_TEXCOORD_0_0",
+            "type": "VEC2"
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 5592,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.001_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 5592,
+            "byteOffset": 5592,
+            "byteStride": 12,
+            "name": "bufferView_buffer_lightning_bolt.001_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 3728,
+            "byteOffset": 11184,
+            "byteStride": 8,
+            "name": "bufferView_buffer_lightning_bolt.001_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1120,
+            "byteOffset": 14912,
+            "name": "bufferView_buffer_lightning_bolt.001_0",
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 16032,
+            "name": "buffer_dark-cloud",
+            "uri": "buffer_dark-cloud.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "name": "Camera",
+            "perspective": {
+                "aspectRatio": 1.703595982340029,
+                "yfov": 0.5033799409866333,
+                "zfar": 100.0,
+                "znear": 0.10000000149011612
+            },
+            "type": "perspective"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "BLEND",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "Material.001",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.047401051968336105,
+                    0.047401051968336105,
+                    0.047401051968336105,
+                    0.8699690699577332
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "lightning_bolt.001",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 1,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "camera": 0,
+            "name": "Camera",
+            "rotation": [
+                -0.09062843769788742,
+                -0.8937962651252747,
+                -0.2099730223417282,
+                0.38578000664711
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                -7.481131553649902,
+                5.34366512298584,
+                -6.5076398849487305
+            ]
+        },
+        {
+            "name": "Lamp",
+            "rotation": [
+                -0.34203386306762695,
+                -0.5232755541801453,
+                -0.2841663062572479,
+                0.7269423007965088
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "translation": [
+                -4.076245307922363,
+                5.903861999511719,
+                1.0054539442062378
+            ]
+        },
+        {
+            "mesh": 0,
+            "name": "lightning_bolt.001",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "active_camera": 0,
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                2,
+                1,
+                0
+            ]
+        }
+    ]
+}
