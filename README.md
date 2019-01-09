@@ -5,9 +5,7 @@ Use real weather data from different locations by changing the coordinates, or c
 
 ![](screenshot/screenshot.png)
 
-<!--
-[Explore the scene](): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
--->
+[Explore the scene](https://weather-yvahddfxgo.now.sh): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
 
 **Install the CLI**
 
