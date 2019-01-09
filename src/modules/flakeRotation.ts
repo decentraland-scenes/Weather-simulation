@@ -1,5 +1,5 @@
 
-
+// holding spin velocity and direction for snowflakes
 @Component('spinVel')
 export class SpinVel {
   dir: Vector3
@@ -10,8 +10,10 @@ export class SpinVel {
   }
 }
 
+// component group to list all snowflakes
 export const flakes = engine.getComponentGroup(SpinVel)
 
+// rotate snowflakes
 export class RotateSystem implements ISystem {
     update(dt: number) {
       for (let flake of flakes.entities) {

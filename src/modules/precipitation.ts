@@ -3,12 +3,13 @@ import { SpinVel } from "./flakeRotation";
 import { fakeWeather, rainSpeed, snowSpeed, callUrl } from "../params";
 
 
-
+// types of precipitation
 export enum PrecipType {
     drop,
     flake
 }
 
+// flag an entity as drop or flake
 @Component('isPrecip')
 export class IsPrecip {
   type: PrecipType
@@ -17,9 +18,10 @@ export class IsPrecip {
   }
 }
 
+// component group to hold all drops and flakes
 export const drops = engine.getComponentGroup(IsPrecip)
 
-
+// create drops and flakes evenly spread out in time as they fall
 export class SpawnSystem implements ISystem {
     weather: CurrentWeather
     constructor(weather){
@@ -48,8 +50,7 @@ export class SpawnSystem implements ISystem {
   }
 
 
-
-// Dropping for both raindrops and snowflakes
+// drop and reposition for both raindrops and snowflakes
 export class FallSystem implements ISystem {
     update(dt: number) {
       for (let drop of drops.entities) {
@@ -71,19 +72,19 @@ export class FallSystem implements ISystem {
   }
 
 
-  // CREATE NEW RAINDROPS
+// CREATE NEW RAINDROPS
 
 // Define a reusable shape
 let dropShape = new PlaneShape()
 // Make the plane rotate to always face you in the Y axis
 dropShape.billboard = BillboardMode.BILLBOARDMODE_Y
 
-// DEFINE DROP MATERIALS
-
+// define reusable drop material
 const dropMaterial = new BasicMaterial()
 dropMaterial.texture = 'materials/drop.png'
 dropMaterial.samplingMode = 0
 
+// create drop entity
 function spawnRain() {
   const drop = new Entity()
   drop.set(new IsPrecip(PrecipType.drop))
@@ -101,7 +102,7 @@ function spawnRain() {
 
 // CREATE NEW SNOWFLAKES
 
-// DEFINE FLAKE MATERIALS AS AN ARRAY OF BasicMaterial COMPONENTS
+// define flake materials as an array oF BasicMaterial components
 
 const flakeMaterial: BasicMaterial[] = []
 for (let i = 1; i < 15; i++) {
@@ -114,6 +115,7 @@ for (let i = 1; i < 15; i++) {
 // Define a reusable shape
 let flakeShape = new PlaneShape()
 
+// create flake entity
 function spawnSnow() {
   const flake = new Entity()
   flake.set(new IsPrecip(PrecipType.flake))

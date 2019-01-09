@@ -9,24 +9,24 @@
 // `cloudy`
 export const fakeWeather: string | null = null
 
-//////////////////////////////
+// LATITUDE AND LONGITUDE OF WEATHER CONDITIONS
 
-// THESE VALUES WILL BE USEFUL WHEN HITTING THE WEATHER API (NOT CURRENTLY SUPPORTED)
+const lat: string = '37'
+const lon: string = '5'
 
-//const lat: string = '-34.55'
-//const lon: string = '-58.46'
+// WEATHER API ID & KEY
 
 const appId: string = 'bb6063b3'
 const APIkey: string = '2e55a43d3e62d76f145f28aa7e3990e9'
-const lat: string = '37'
-const lon: string = '5'
+
+// FALLING SPEED OF RAIN AND SNOW
 
 export const rainSpeed = 4
 export const snowSpeed = 1
 
 ////////////////////////////////
-// CUSTOM TYPES
 
+// fully constructed URL for weather API
 export const callUrl: string =
   'http://api.weatherunlocked.com/api/current/' +
   lat +

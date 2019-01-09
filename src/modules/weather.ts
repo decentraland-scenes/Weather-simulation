@@ -1,5 +1,6 @@
 import { fakeWeather, rainSpeed, snowSpeed, callUrl } from "../params";
 
+// possible weather conditions
 export enum Weather {
     sun,
     clouds,
@@ -10,7 +11,7 @@ export enum Weather {
   }
 
 
-  @Component('currentWeather')
+// object to store weather variables
 export class CurrentWeather {
   weather: Weather
   dropsToAdd: number
@@ -36,6 +37,7 @@ export class CurrentWeather {
   }
 }
 
+// system to regularly update weather conditions
 export class CheckWeather implements ISystem {
   weather: CurrentWeather
   constructor(weather){
@@ -50,7 +52,7 @@ export class CheckWeather implements ISystem {
   }
 }
 
-
+// system to flash lightning when stormy
 export class LightningSystem implements ISystem {
   weather: CurrentWeather
   lightning: Entity
@@ -81,6 +83,7 @@ export class LightningSystem implements ISystem {
   }
 }
 
+// if no fake weather in params, check weather API
 function getWeather(weather: CurrentWeather) {
   let newWeather: Weather = Weather.sun
   if (fakeWeather) {
@@ -101,6 +104,7 @@ function getWeather(weather: CurrentWeather) {
   }
 }
 
+// map verbose API responses to distinct possible values
 function mapWeather(weather: string) {
   log(weather)
   let simpleWeather: Weather
@@ -120,6 +124,7 @@ function mapWeather(weather: string) {
   return simpleWeather
 }
 
+// change values in weather object based on weather conditions
 function setWeather(current: CurrentWeather, newWeather: Weather) {
   if (newWeather == current.weather) {
     return
@@ -159,6 +164,7 @@ function setWeather(current: CurrentWeather, newWeather: Weather) {
   setClouds(current)
 }
 
+// show no clouds / white clouds / dark clouds
 export function setClouds(weather: CurrentWeather) {
   let clouds = weather.clouds
   switch (weather.weather) {
@@ -183,6 +189,7 @@ export function setClouds(weather: CurrentWeather) {
   }
 }
 
+// show house model as dry / wet / snowy
 export function setHouse(weather: CurrentWeather) {
   let house = weather.house
   switch (weather.weather) {
