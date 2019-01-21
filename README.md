@@ -42,3 +42,7 @@ You can also modify `dropSpeed` and `flakeSpeed` to change the speed at which ra
 
 
 Learn more about how to build your own scenes in our [documentation](https://docs.decentraland.org/) site.
+
+## Copyright info
+
+This scene is protected with a standard Apache 2 licence. See the terms and conditions in the [LICENSE](/LICENSE) file.
