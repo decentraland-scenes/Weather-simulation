@@ -70,7 +70,7 @@ export class LightningSystem implements ISystem {
         let lightningNum: number = Math.floor(Math.random() * 25) + 1
         if (lightningNum > 6) {
           if (this.lightning.has(GLTFShape)) {
-            this.lightning.remove(GLTFShape)
+            this.lightning.removeComponent(GLTFShape)
             this.weather.lightningCounter = Math.random() * 20
             return
           }
@@ -184,7 +184,7 @@ export function setClouds(weather: CurrentWeather) {
       clouds.set(new GLTFShape('models/clouds.gltf'))
       break
     case Weather.sun:
-      clouds.remove(GLTFShape)
+      clouds.removeComponent(GLTFShape)
       break
   }
 }

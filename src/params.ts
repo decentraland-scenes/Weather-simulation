@@ -7,7 +7,7 @@
 // `heavy rain`
 // `light rain`
 // `cloudy`
-export const fakeWeather: string | null = null
+export const fakeWeather: string | null = "thunder"
 
 // LATITUDE AND LONGITUDE OF WEATHER CONDITIONS
 

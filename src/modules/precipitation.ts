@@ -54,8 +54,8 @@ export class SpawnSystem implements ISystem {
 export class FallSystem implements ISystem {
     update(dt: number) {
       for (let drop of drops.entities) {
-        let position = drop.get(Transform).position
-        let type = drop.get(IsPrecip).type
+        let position = drop.getComponent(Transform).position
+        let type = drop.getComponent(IsPrecip).type
   
         if (type == PrecipType.drop) {
           position.y = position.y - dt * rainSpeed
