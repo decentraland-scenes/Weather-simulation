@@ -17,9 +17,9 @@ export const flakes = engine.getComponentGroup(SpinVel)
 export class RotateSystem implements ISystem {
     update(dt: number) {
       for (let flake of flakes.entities) {
-        const dir = flake.get(SpinVel).dir
-        const vel = flake.get(SpinVel).vel
-        flake.get(Transform).rotate(dir, vel)
+        const dir = flake.getComponent(SpinVel).dir
+        const vel = flake.getComponent(SpinVel).vel
+        flake.getComponent(Transform).rotate(dir, vel)
       }
     }
   }

@@ -14,9 +14,12 @@ const weatherObject = new CurrentWeather()
 // ADD HOUSE
 
 const house = new Entity()
-house.add(new Transform())
-house.get(Transform).position.set(5, 0, 5)
-house.set(new GLTFShape('models/house_dry.gltf'))
+house.addComponent(new Transform({
+  position: new Vector3(8, 0, 8),
+  scale: new Vector3(1.6, 1.6, 1.6)
+}))
+
+house.addComponent(new GLTFShape('models/house_dry.gltf'))
 engine.addEntity(house)
 
 weatherObject.house = house
@@ -24,9 +27,9 @@ weatherObject.house = house
 // ADD CLOUDS
 
 const clouds = new Entity()
-clouds.add(new Transform({
-  position: new Vector3(5, 10, 5),
-  scale: new Vector3(5, 5, 5)
+clouds.addComponent(new Transform({
+  position: new Vector3(8, 10, 8),
+  scale: new Vector3(4, 4, 4)
 }))
 engine.addEntity(clouds)
 
@@ -44,9 +47,9 @@ for (let i = 1; i < 6; i++) {
 // ADD LIGHTNING ENTITY
 
 const lightning = new Entity()
-lightning.add(new Transform())
-lightning.get(Transform).position.set(5, 10, 5)
-lightning.get(Transform).scale.setAll(5)
+lightning.addComponent(new Transform())
+lightning.getComponent(Transform).position.set(8, 10, 8)
+lightning.getComponent(Transform).scale.setAll(5)
 engine.addEntity(lightning)
 
 

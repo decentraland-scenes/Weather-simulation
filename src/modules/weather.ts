@@ -68,16 +68,17 @@ export class LightningSystem implements ISystem {
       //log("timer " + timer.count)
       if (this.weather.lightningCounter < 0) {
         let lightningNum: number = Math.floor(Math.random() * 25) + 1
-        if (lightningNum > 6) {
-          if (this.lightning.has(GLTFShape)) {
-            this.lightning.remove(GLTFShape)
+        if (lightningNum >= this.lightningModels.length) {
+          if (this.lightning.hasComponent(GLTFShape)) {
+            this.lightning.removeComponent(GLTFShape)
             this.weather.lightningCounter = Math.random() * 20
             return
           }
         }
-
-        this.lightning.set(this.lightningModels[lightningNum])
-        this.weather.lightningCounter = Math.random() * 10
+        else{
+          this.lightning.addComponentOrReplace(this.lightningModels[lightningNum])
+          this.weather.lightningCounter = Math.random() * 10
+        }
       }
     }
   }
@@ -169,22 +170,27 @@ export function setClouds(weather: CurrentWeather) {
   let clouds = weather.clouds
   switch (weather.weather) {
     case Weather.storm:
-      clouds.set(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(8, 10, 8)
       break
     case Weather.snow:
-      clouds.set(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(8, 10, 8)
       break
     case Weather.heavyRain:
-      clouds.set(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(8, 10, 8)
       break
     case Weather.rain:
-      clouds.set(new GLTFShape('models/clouds.gltf'))
+      clouds.addComponentOrReplace(new GLTFShape('models/clouds.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(5, 10, 12)
       break
     case Weather.clouds:
-      clouds.set(new GLTFShape('models/clouds.gltf'))
+      clouds.addComponentOrReplace(new GLTFShape('models/clouds.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(5, 10, 12)
       break
     case Weather.sun:
-      clouds.remove(GLTFShape)
+      clouds.removeComponent(GLTFShape)
       break
   }
 }
@@ -194,16 +200,16 @@ export function setHouse(weather: CurrentWeather) {
   let house = weather.house
   switch (weather.weather) {
     case Weather.storm:
-      house.set(new GLTFShape('models/house_wet.gltf'))
+      house.addComponentOrReplace(new GLTFShape('models/house_wet.gltf'))
       break
     case Weather.snow:
-      house.set(new GLTFShape('models/house_snow.gltf'))
+      house.addComponentOrReplace(new GLTFShape('models/house_snow.gltf'))
       break
     case Weather.heavyRain:
-      house.set(new GLTFShape('models/house_wet.gltf'))
+      house.addComponentOrReplace(new GLTFShape('models/house_wet.gltf'))
       break
     case Weather.rain:
-      house.set(new GLTFShape('models/house_wet.gltf'))
+      house.addComponentOrReplace(new GLTFShape('models/house_wet.gltf'))
       break
   }
 }
