@@ -78,3 +78,10 @@ typings/
 
 # Blender files
 *.blend
+
+# Builds
+bin/
+game.js
+
+# Package lock
+package-lock.json
