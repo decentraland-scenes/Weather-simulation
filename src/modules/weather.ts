@@ -171,18 +171,23 @@ export function setClouds(weather: CurrentWeather) {
   switch (weather.weather) {
     case Weather.storm:
       clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(8, 10, 8)
       break
     case Weather.snow:
       clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(8, 10, 8)
       break
     case Weather.heavyRain:
       clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(8, 10, 8)
       break
     case Weather.rain:
       clouds.addComponentOrReplace(new GLTFShape('models/clouds.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(5, 10, 12)
       break
     case Weather.clouds:
       clouds.addComponentOrReplace(new GLTFShape('models/clouds.gltf'))
+      clouds.getComponent(Transform).position = new Vector3(5, 10, 12)
       break
     case Weather.sun:
       clouds.removeComponent(GLTFShape)

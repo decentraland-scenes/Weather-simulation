@@ -80,9 +80,9 @@ let dropShape = new PlaneShape()
 const billboard = new Billboard(false, true, false)
 
 // define reusable drop material
+const dropTexture = new Texture('materials/drop.png', {hasAlpha: true, samplingMode: 1})
 const dropMaterial = new BasicMaterial()
-dropMaterial.texture = 'materials/drop.png'
-dropMaterial.samplingMode = 0
+dropMaterial.texture = dropTexture
 
 // create drop entity
 function spawnRain() {
@@ -111,9 +111,9 @@ function spawnRain() {
 
 const flakeMaterial: BasicMaterial[] = []
 for (let i = 1; i < 5; i++) {
+  let texture = new Texture('materials/flake' + i + '.png', {hasAlpha: true, samplingMode: 1})
   let material = new BasicMaterial()
-  material.texture = 'materials/flake' + i + '.png'
-  material.samplingMode = 0
+  material.texture = texture
   flakeMaterial.push(material)
 }
 

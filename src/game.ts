@@ -14,8 +14,11 @@ const weatherObject = new CurrentWeather()
 // ADD HOUSE
 
 const house = new Entity()
-house.addComponent(new Transform())
-house.getComponent(Transform).position.set(8, 0, 8)
+house.addComponent(new Transform({
+  position: new Vector3(8, 0, 8),
+  scale: new Vector3(1.6, 1.6, 1.6)
+}))
+
 house.addComponent(new GLTFShape('models/house_dry.gltf'))
 engine.addEntity(house)
 
@@ -26,7 +29,7 @@ weatherObject.house = house
 const clouds = new Entity()
 clouds.addComponent(new Transform({
   position: new Vector3(8, 10, 8),
-  scale: new Vector3(5, 5, 5)
+  scale: new Vector3(4, 4, 4)
 }))
 engine.addEntity(clouds)
 
