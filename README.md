@@ -5,32 +5,35 @@ Use real weather data from different locations by changing the coordinates, or c
 
 ![](screenshot/screenshot.png)
 
-[Explore the scene](https://weather-pkfkpxankv.now.sh): this link takes you to a copy of the scene deployed to a remote server where you can interact with it just as if you were running `dcl start` locally.
+This scene shows you:
+
+- How to call a REST API and parse a JSON response
+- How to conditionally render different scenarios based on the API's responses
+- How to simulate rain by moving multiple entities down and recycling them
+- How to sumulate snow by slowly moving arnd rotating multiple entities down and recyling them
+
+
+## Try it out
 
 **Install the CLI**
 
-Download and install the Decentraland CLI by running the following command
+Download and install the Decentraland CLI by running the following command:
 
 ```bash
 npm i -g decentraland
 ```
 
-For a more details, follow the steps in the [Installation guide](https://docs.decentraland.org/documentation/installation-guide/).
-
-
 **Previewing the scene**
 
-Once you've installed the CLI, download this example and navigate to its directory from your terminal or command prompt.
-
-_from the scene directory:_
+Download this example and navigate to its directory, then run:
 
 ```
 $:  dcl start
 ```
 
-Any dependencies are installed and then the CLI will open the scene in a new browser tab automatically.
+Any dependencies are installed and then the CLI opens the scene in a new browser tab.
 
-**Usage**
+**Scene Usage**
 
 You need create an account on the the [Weather Unlocked API](http://www.weatherunlocked.com/products/weather-api/overview). Then, replace the values of the fields `appId` and `APIkey` with your own credentials.
 
@@ -42,6 +45,8 @@ You can also modify `dropSpeed` and `flakeSpeed` to change the speed at which ra
 
 
 Learn more about how to build your own scenes in our [documentation](https://docs.decentraland.org/) site.
+
+If something doesn’t work, please [file an issue](https://github.com/decentraland-scenes/Awesome-Repository/issues/new).
 
 ## Copyright info
 
