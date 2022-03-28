@@ -6,11 +6,13 @@
     "start": "dcl start",
     "build": "build-ecs",
     "watch": "build-ecs --watch",
-    "deploy:now": "now --platform-version 1 --docker",
+    "ecs:install": "npm install --save-dev decentraland-ecs@latest",
     "ecs:install-next": "npm install --save-dev decentraland-ecs@next",
-    "ecs:install-stable": "npm install --save-dev decentraland-ecs@latest"
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
   },
-  "devDependencies": {
-    "decentraland-ecs": "latest"
+   "devDependencies": {
+    "decentraland-ecs": "latest",
+    "@dcl/eslint-config": "^1.0.1"
   }
 }

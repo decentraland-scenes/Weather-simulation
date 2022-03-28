@@ -7,7 +7,7 @@
 // `heavy rain`
 // `light rain`
 // `cloudy`
-export const fakeWeather: string | null = "snow"
+export const fakeWeather: string | null = null
 
 // LATITUDE AND LONGITUDE OF WEATHER CONDITIONS
 
@@ -36,4 +36,3 @@ export const callUrl: string =
   appId +
   '&app_key=' +
   APIkey
-

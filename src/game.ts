@@ -1,8 +1,16 @@
-import { CheckWeather, CurrentWeather, Weather, LightningSystem } from "./modules/weather";
-import { RotateSystem, SpinVel } from "./modules/flakeRotation";
-import { IsPrecip, PrecipType, FallSystem, SpawnSystem } from "./modules/precipitation";
-
-
+import {
+  CheckWeather,
+  CurrentWeather,
+  Weather,
+  LightningSystem,
+} from './modules/weather'
+import { RotateSystem, SpinVel } from './modules/flakeRotation'
+import {
+  IsPrecip,
+  PrecipType,
+  FallSystem,
+  SpawnSystem,
+} from './modules/precipitation'
 
 ///////// SCENE FIXED ENTITIES
 
@@ -10,14 +18,15 @@ import { IsPrecip, PrecipType, FallSystem, SpawnSystem } from "./modules/precipi
 
 const weatherObject = new CurrentWeather()
 
-
 // ADD HOUSE
 
 const house = new Entity()
-house.addComponent(new Transform({
-  position: new Vector3(8, 0, 8),
-  scale: new Vector3(1.6, 1.6, 1.6)
-}))
+house.addComponent(
+  new Transform({
+    position: new Vector3(8, 0, 8),
+    scale: new Vector3(1.59, 1.59, 1.59),
+  })
+)
 
 house.addComponent(new GLTFShape('models/house_dry.gltf'))
 engine.addEntity(house)
@@ -27,10 +36,12 @@ weatherObject.house = house
 // ADD CLOUDS
 
 const clouds = new Entity()
-clouds.addComponent(new Transform({
-  position: new Vector3(8, 10, 8),
-  scale: new Vector3(4, 4, 4)
-}))
+clouds.addComponent(
+  new Transform({
+    position: new Vector3(8, 10, 8),
+    scale: new Vector3(4, 4, 4),
+  })
+)
 engine.addEntity(clouds)
 
 weatherObject.clouds = clouds
@@ -51,7 +62,6 @@ lightning.addComponent(new Transform())
 lightning.getComponent(Transform).position.set(8, 10, 8)
 lightning.getComponent(Transform).scale.setAll(5)
 engine.addEntity(lightning)
-
 
 // ADD SYSTEMS
 

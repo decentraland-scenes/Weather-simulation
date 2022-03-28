@@ -1,15 +1,14 @@
-import { fakeWeather, rainSpeed, snowSpeed, callUrl } from "../params";
+import { fakeWeather, rainSpeed, snowSpeed, callUrl } from '../params'
 
 // possible weather conditions
 export enum Weather {
-    sun,
-    clouds,
-    rain,
-    heavyRain,
-    snow,
-    storm
-  }
-
+  sun,
+  clouds,
+  rain,
+  heavyRain,
+  snow,
+  storm,
+}
 
 // object to store weather variables
 export class CurrentWeather {
@@ -40,8 +39,8 @@ export class CurrentWeather {
 // system to regularly update weather conditions
 export class CheckWeather implements ISystem {
   weather: CurrentWeather
-  constructor(weather){
-      this.weather = weather
+  constructor(weather) {
+    this.weather = weather
   }
   update(dt: number) {
     this.weather.checkInterval -= 1
@@ -57,26 +56,27 @@ export class LightningSystem implements ISystem {
   weather: CurrentWeather
   lightning: Entity
   lightningModels: GLTFShape[]
-  constructor(weather, lightning, models){
-      this.weather = weather
-      this.lightning = lightning
-      this.lightningModels = models
+  constructor(weather, lightning, models) {
+    this.weather = weather
+    this.lightning = lightning
+    this.lightningModels = models
   }
   update() {
-    if (this.weather.weather == Weather.storm) {
+    if (this.weather.weather === Weather.storm) {
       this.weather.lightningCounter -= 1
       //log("timer " + timer.count)
       if (this.weather.lightningCounter < 0) {
-        let lightningNum: number = Math.floor(Math.random() * 25) + 1
+        const lightningNum: number = Math.floor(Math.random() * 25) + 1
         if (lightningNum >= this.lightningModels.length) {
           if (this.lightning.hasComponent(GLTFShape)) {
             this.lightning.removeComponent(GLTFShape)
             this.weather.lightningCounter = Math.random() * 20
             return
           }
-        }
-        else{
-          this.lightning.addComponentOrReplace(this.lightningModels[lightningNum])
+        } else {
+          this.lightning.addComponentOrReplace(
+            this.lightningModels[lightningNum]
+          )
           this.weather.lightningCounter = Math.random() * 10
         }
       }
@@ -94,14 +94,14 @@ function getWeather(weather: CurrentWeather) {
     executeTask(async () => {
       try {
         log('getting new weather')
-        let response = await fetch(callUrl)
-        let json = await response.json()
+        const response = await fetch(callUrl)
+        const json = await response.json()
         newWeather = mapWeather(json.wx_desc)
         setWeather(weather, newWeather)
       } catch {
         log('failed to reach URL', error)
       }
-    })
+    }).catch((error) => log(error))
   }
 }
 
@@ -127,7 +127,7 @@ function mapWeather(weather: string) {
 
 // change values in weather object based on weather conditions
 function setWeather(current: CurrentWeather, newWeather: Weather) {
-  if (newWeather == current.weather) {
+  if (newWeather === current.weather) {
     return
   }
   current.weather = newWeather
@@ -167,7 +167,7 @@ function setWeather(current: CurrentWeather, newWeather: Weather) {
 
 // show no clouds / white clouds / dark clouds
 export function setClouds(weather: CurrentWeather) {
-  let clouds = weather.clouds
+  const clouds = weather.clouds
   switch (weather.weather) {
     case Weather.storm:
       clouds.addComponentOrReplace(new GLTFShape('models/dark-cloud.gltf'))
@@ -197,7 +197,7 @@ export function setClouds(weather: CurrentWeather) {
 
 // show house model as dry / wet / snowy
 export function setHouse(weather: CurrentWeather) {
-  let house = weather.house
+  const house = weather.house
   switch (weather.weather) {
     case Weather.storm:
       house.addComponentOrReplace(new GLTFShape('models/house_wet.gltf'))
